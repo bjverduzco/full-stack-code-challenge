@@ -1,0 +1,26 @@
+{
+  "name": "full-stack-code-challenge",
+  "version": "1.0.0",
+  "description": "Description Grocery List Requirements For this challenge you will be making a grocery list. Each item will contain two values: name (String) and qty (Number). This application must be full stack (includes a view, client-side, server-side, and database. On your view, a user should be able to add items to the grocery list. As items are added to your list, they should be listed below under Grocery Items. In your Grocery Items list a user should be able to perform two actions: Update the values (change name or qty) as well as Remove items as they are retreived at the store. Both actions should update the values stored in the database as well as the view.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjverduzco/full-stack-code-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bjverduzco/full-stack-code-challenge/issues"
+  },
+  "homepage": "https://github.com/bjverduzco/full-stack-code-challenge#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.7"
+  }
+}

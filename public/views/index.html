@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="groceryApp">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <title>Full Stack Code Challenge</title>
+    <script src="vendors/angular/angular.min.js"></script>
+    <script src="scripts/client.js"></script>
+  </head>
+  <body ng-controller="MainController as main">
+    <h1>Full Stack Code Challenge</h1>
+
+    <div>
+      Grocery item: <input type="text" ng-model="main.name" />
+      <!-- I made the min 1 because I don't want it to be possible to add negative
+    amounts or to be able to add 0 of an item -->
+      Quantity: <input type="number" min="1" ng-model="main.quantity" />
+      <button ng-click="main.addGroceryItem()">Add Item</button>
+
+      <ul>
+        <li ng-repeat="grocery in main.groceries track by $index">
+          Item: <label ng-show="grocery.edit">{{grocery.name}}</label>
+          <input ng-hide="grocery.edit" type="text" ng-model="grocery.name" />
+          <br />
+          Quantity: <label ng-show="grocery.edit">{{grocery.quantity}}</label>
+          <input ng-hide="grocery.edit" type="text" ng-model="grocery.quantity" />
+          <br />
+          <!-- {{grocery._id}} -->
+          <button ng-click="main.removeItem(grocery._id)">Remove</button>
+          <button ng-click="main.editItem($index)">Edit</button>
+          <!-- this is hidden in the respective items field until the edit button is clicked
+          then the item can be updated with text fields that appear -->
+          <button ng-hide="grocery.edit" ng-click="main.updateItem($index, grocery._id, grocery.name, grocery.quantity)">Update</button>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
